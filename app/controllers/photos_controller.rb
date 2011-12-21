@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "admin", :except => [:show]
   # GET /photos
   # GET /photos.json
   def index

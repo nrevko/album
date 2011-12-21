@@ -8,7 +8,7 @@
 #note in rails3.1 you have to rake assets:precompile
 
 #change it as needed
-s_dir = 'public/assets/seed_data'
+s_dir = File.expand_path("../../public/assets/seed_data", __FILE__)
 #get names of the files from the source dir
 albums = Dir.entries(s_dir)
 

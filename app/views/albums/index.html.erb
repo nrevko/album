@@ -3,7 +3,13 @@
 <% @albums.each do |album| %>
   <div>
     <%= album.title %><br />
-    <%= link_to image_tag(album.photos.first.path), album %>
+    
+    <% if album.photos.size>0 %>
+      <%= link_to image_tag(album.photos.first.path), album %>
+    <% else %>
+      <%= link_to "See current state of Album", album %>
+    <% end %>
+
     <div>
       <%= link_to 'Edit', edit_album_path(album) %>
       <%= link_to 'Destroy', album, confirm: 'Are you sure?', method: :delete %>
@@ -12,7 +18,3 @@
 <br />
 <% end %>
 
-
-<br />
-
-<%= link_to 'New Album', new_album_path %>
