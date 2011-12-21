@@ -1,24 +1,17 @@
 <h1>Listing albums</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Directory</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @albums.each do |album| %>
-  <tr>
-    <td><%= album.title %></td>
-    <td><%= album.directory %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div>
+    <%= album.title %><br />
+    <%= link_to image_tag(album.photos.first.path), album %>
+    <div>
+      <%= link_to 'Edit', edit_album_path(album) %>
+      <%= link_to 'Destroy', album, confirm: 'Are you sure?', method: :delete %>
+    </div>
+  </div>
+<br />
 <% end %>
-</table>
+
 
 <br />
 
