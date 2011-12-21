@@ -1,0 +1,6 @@
+<h1>Editing photo</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', album_photo_path(@photo, :album_id=>@photo.album_id) %> |
+<%= link_to 'Back', album_photos_path %>

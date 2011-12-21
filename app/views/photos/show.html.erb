@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to image_tag(@photo.path), album_path(@photo.album) %>
+<p>
+  <b><%= @photo.title %></b> in <%= @photo.album.title %> album.
+<br />
+  <%= @photo.description %>
+</p>
+
+<% if !@photo.photographer.empty? %>
+  <p>
+    By <b><%= @photo.photographer %></b>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_album_photo_path(@photo, :album_id=>@photo.album_id) %> |
+<%= link_to 'Back', album_photos_path(:album_id=>@photo.album_id) %>

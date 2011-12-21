@@ -1,11 +1,16 @@
 require 'spec_helper'
 
 describe "Albums" do
-  describe "GET /albums" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get albums_path
-      response.status.should be(200)
-    end
+  before do
+    @album1 = Factory(:album)
+    @album2 = Factory(:album, :title=>"Winter Break")
+  end
+
+  it "should show me the page of albums with titles and directories" do
+    visit albums_path
+
+    page.should have_content(@album1.title)
+    page.should have_content(@album2.title)
+    page.should have_content(@album2.directory)
   end
 end

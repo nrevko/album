@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @album.title %>
-</p>
-
-<p>
-  <b>Directory:</b>
-  <%= @album.directory %>
-</p>
+<div>
+  <h1>
+   <%= @album.title %> in <%= @album.directory %>
+  </h1>
+  <%= render @album.photos %>
+</div>
 
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
