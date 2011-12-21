@@ -2,12 +2,12 @@
 
 <%= link_to image_tag(@photo.path), album_path(@photo.album) %>
 <p>
-  <b><%= @photo.title %></b> in <%= @photo.album.title %> album.
+  <b><%= @photo.title %></b> in <b><%= @photo.album.title %></b> album.
 <br />
   <%= @photo.description %>
 </p>
 
-<% if !@photo.photographer.empty? %>
+<% if !@photo.photographer.nil? && !@photo.photographer.empty? %>
   <p>
     By <b><%= @photo.photographer %></b>
   </p>
