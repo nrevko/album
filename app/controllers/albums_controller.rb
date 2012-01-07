@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  #super simple authentication
   http_basic_authenticate_with :name => "admin", :password => "admin", :except => [:show, :index]
 
   # GET /albums
